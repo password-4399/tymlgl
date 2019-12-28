@@ -513,12 +513,11 @@
             url: 'js/jquery-1.10.2.min.js',
             async: false,
             success: function () {
-                // try {
-                //     audio.play();
-                // }catch (e) {
-                //
-                // }
-                initMusic();
+                try {
+                    audio.play();
+                }catch (e) {
+                    initMusic();
+                }
                 // audio will play in iOS before 4.2.1
             }
         });
@@ -553,8 +552,10 @@
             let ua = window.navigator.userAgent.toLowerCase();
             return /micromessenger/.test(ua);
         };
+
         // method 自动播放
         let audioPlayer = (id) => {
+
             let audio = document.getElementById(id);
             if (isWeixin()) {
                 document.addEventListener(
@@ -606,7 +607,7 @@
 
         };
         // 使用
-        audioPlayer('myaudio');
+        audioPlayer('myaudio')
     }
 
     //翻页提示箭头
