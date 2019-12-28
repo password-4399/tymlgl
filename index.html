@@ -546,6 +546,7 @@
         // method 判断是否为微信浏览器
         let isWeixin = () => {
             let ua = window.navigator.userAgent.toLowerCase();
+
             return /micromessenger/.test(ua);
         };
 
@@ -554,6 +555,7 @@
 
             let audio = document.getElementById(id);
             if (isWeixin()) {
+                alert("weixin");
                 document.addEventListener(
                     'WeixinJSBridgeReady',() => {
                         audio.play()
@@ -578,7 +580,7 @@
                 }
 
             } else {
-
+                alert("qq");
                 audio.play();
 
                 let touchPlay = () => {
