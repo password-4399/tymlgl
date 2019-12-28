@@ -559,14 +559,12 @@
                 document.addEventListener(
                     'WeixinJSBridgeReady', () => {
                         audio.play();
-                        alert("weixinpaly2333");
                     }, false);
                 // 添加 getNetworkType 的判断原因, 请看问题分析2
                 if (typeof window.WeixinJSBridge == "object"
                     && typeof window.WeixinJSBridge.invoke == "function") {
                     window.WeixinJSBridge.invoke('getNetworkType', {}, () => {
                         audio.play();
-                        lert("weixinpaly2222");
                     })
                 }
             } else {
